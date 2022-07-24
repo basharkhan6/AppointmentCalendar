@@ -1,0 +1,12 @@
+<div class="text-center m-2 my-grid">
+
+  <div *ngFor="let day of [].constructor(31); let i=index;" class="date w-24 h-24 md:w-36 md:h-36 border p-4">
+    <div class="date-txt text-xxl font-bold">{{i+1}}</div>
+    <div *ngIf="appointmentsData.has(i+1)" class="event-list h-12 md:h-20 overflow-y-auto tiny-scroll">
+      <div *ngFor="let appointment of appointmentsData.get(i+1); let j=index" class="event rounded bg-green-200 mb-1 h-6 px-2">
+        {{j+1 + '. ' + appointment.firstName + ' ' + appointment.lastName + '('+ appointment.age +')'}}
+      </div>
+    </div>
+  </div>
+
+</div>
